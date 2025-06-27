@@ -1,7 +1,8 @@
+import 'package:can_visualizer/interfaces_usuario/ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const InterfazPrincipal());
 }
 
 class MyApp extends StatelessWidget {
