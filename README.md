@@ -26,13 +26,13 @@ De manera que, el módulo CANReader utilizaría un Stream como Publisher, tenien
 
 [ DataEngine ] --(ChangeNotifier: Observer)--> [ UI ]
 ```
-
+Se ha pensado en poder hacer que se vea el logger tipo consola en la UI también, pero por el momento simplemente se espera que se guarde el historial en un doc. nuevo cada vez que se inicie una recepción de datos.
 
 #### 2. Descubrimientos y Aprendizajes Clave:
-Descubrí la libreria de dart (dart:io) que permite crear y escrbir documentos/archivos locales, esto se aplicará para el guardado del historial del log.
+Descubrí la libreria de dart (dart:io) que permite crear y escrbir documentos/archivos locales, esto se aplicará para el guardado del historial del log. También volví a reaprender y  familiarizarme con la sintaxis de de dart.
 
 #### 3. Bloqueos o Dificultades Encontradas:
-El manejo del tiempo ha imposibilitado un avance más veloz en el proyecto.
+El manejo del tiempo ha imposibilitado un avance más veloz en el proyecto. Me ha costado entender como se quiere el log. 
 
 #### 4. Plan para la Próxima Semana:
 Implementar la funcionalidad central del sistema, es decir:
