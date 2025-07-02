@@ -14,7 +14,18 @@ Tu misión es diseñar la arquitectura de este sistema y crear un prototipo func
 #### 1. Actividades Realizadas:
 Leí el enunciado y diseñé un diagrama de arquitectura básico, definiendo que patrones de diseño se utilizarán. Recordé la sintaxis de dart. Creé proyecto base en flutter, carpetas importantes para el proyecto y se subió a GitHub. Implementé la interfaz de usuario para visualizar los datos actuales y el módulo Logger.
 
+##### Arquitectura: 
+Se ha diseñado a priori para que el sistema funcione así:
 ![Captura de pantalla 2025-07-02 130820](https://github.com/user-attachments/assets/ee92e1d6-5312-4201-b5a9-9e2a854b75f6)
+
+De manera que, el módulo CANReader utilizaría un Stream como Publisher, teniendo de Suscribers tanto a DataEngine como el Logger. Ambos módulos contendrían la lógica para decodificar los datos en tiempo real y para guardar un historial de todos los datos recibidos, respectivamente. Por su parte, el DataEngine tendría un ChangeNotifier (funcionalidad de dart) que serviría de Observer para conectar con la UI.
+
+```
+[ CANReader ] --(Stream: Publisher)--> [ DataEngine ]
+[ CANReader ] --(Stream: Publisher)--> [ Logger ]
+
+[ DataEngine ] --(ChangeNotifier: Observer)--> [ UI ]
+```
 
 
 #### 2. Descubrimientos y Aprendizajes Clave:
@@ -27,4 +38,4 @@ El manejo del tiempo ha imposibilitado un avance más veloz en el proyecto.
 Implementar la funcionalidad central del sistema, es decir:
 - Simulación de la red CAN y lógica de decodificación
 - Conectar el ChangeNotifier para mostrar datos actualizados en la UI en tiempo real.
-
+Formalizar formato de la Arquitectura.
