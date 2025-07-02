@@ -14,6 +14,9 @@ Tu misión es diseñar la arquitectura de este sistema y crear un prototipo func
 #### 1. Actividades Realizadas:
 Leí el enunciado y diseñé un diagrama de arquitectura básico, definiendo que patrones de diseño se utilizarán. Recordé la sintaxis de dart. Creé proyecto base en flutter, carpetas importantes para el proyecto y se subió a GitHub. Implementé la interfaz de usuario para visualizar los datos actuales y el módulo Logger.
 
+![Captura de pantalla 2025-07-02 130820](https://github.com/user-attachments/assets/ee92e1d6-5312-4201-b5a9-9e2a854b75f6)
+
+
 #### 2. Descubrimientos y Aprendizajes Clave:
 Descubrí la libreria de dart (dart:io) que permite crear y escrbir documentos/archivos locales, esto se aplicará para el guardado del historial del log.
 
@@ -24,3 +27,4 @@ El manejo del tiempo ha imposibilitado un avance más veloz en el proyecto.
 Implementar la funcionalidad central del sistema, es decir:
 - Simulación de la red CAN y lógica de decodificación
 - Conectar el ChangeNotifier para mostrar datos actualizados en la UI en tiempo real.
+
