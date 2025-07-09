@@ -45,26 +45,28 @@ Formalizar formato de la Arquitectura.
 
 #### 1. Actividades Realizadas:
 
+Se implementó la simulación de Stream de una red CAN, además de los módulos encargados de escucharlo (data_engine). Se implementó la comunicación del Data Engine, un ChangeNotifier, tanto con la UI como con el Logger. Se cambió la UI, haciéndola más simple pero mostrando las variables que se decidieron enviar a través de la red CAN. Se implementó las funcionalidades del Logger, permitiendo que cree un archivo .log con los logs requeridos y que imprima en la consola.
 
 ##### Arquitectura: 
-```
-[ CANReader ]
-     |
-     v
-[ DataEngine ]  <--- Suscribe al Stream
-     |    \
-     v     v
-   UI     Logger
+La arquitectura del sistema cambió a: 
 
-``
+![Diagrama de Arquitectura](Docs/images/UML.png)
+
+Estos cambios se hicieron para mantener un flujo más controlado, de manera que si la UI (el monitor) tiene que interactuar con el Logger, o viceversa, siempre sea a través del Data Engine. De esta manera, los patrones de diseño del sistema son:
+
+- **Publisher/Subscriber**: Stream CAN → Data Engine
+- **Observer**: Data Engine (ChangeNotifier) → UI (Monitor)  
+- **Singleton**: Logger para una instancia única por sesión
 
 
 
 #### 2. Descubrimientos y Aprendizajes Clave:
-
+Se descubrió la función para generar números de forma random en Dart. También se aprendió la diferencia entre un stream de tipo broadcast y uno que al desuscribirse también deja de enviar señales hasta que se le instancie de nuevo. Específicamente, los streams creados con funciones `async*` (como el que se usó) se detienen automáticamente cuando el último listener se desuscribe, evitando el consumo innecesario de recursos. Por el contrario, los streams broadcast pueden mantener múltiples listeners y requieren un manejo manual de su ciclo de vida. 
 
 #### 3. Bloqueos o Dificultades Encontradas:
+El mayor bloqueo fue la falta de tiempo para avanzar con mayor velocidad. Hubieron dudas pero fueron todas resueltas, así que se pudo cumplir con lo esperado esta semana. Se gastó algo de tiempo teniendo que cambiar las interacciones entre el logger y la UI, pero no por problemas técnicos o funcionales, más que nada para que la arquitectura quedara más limpia.
 
 
 #### 4. Plan para la Próxima Semana:
+Recibir feedback y nuevas tareas.
 
