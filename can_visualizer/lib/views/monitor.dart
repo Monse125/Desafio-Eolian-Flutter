@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
-//import 'package:can_visualizer/widgets/logger_widget.dart';
-import 'package:can_visualizer/widgets/panel_datos.dart';
-import '../stream/stream_can.dart';
+
 import '../data_engine.dart';
 import '../logger/logger.dart';
 
@@ -15,26 +12,20 @@ class Monitor extends StatefulWidget {
 }
 
 class _MonitorState extends State<Monitor> {
-  StreamSubscription? _subscription;
   late final DataEngine _engine;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _engine = DataEngine(logger: Logger.instance);
-    Logger.instance.logStartListening(); // Inicio escucha
-    _subscription = getCANDataStream().listen((frame) {
-      _engine.processFrame(frame); // Solo imprime en consola
-    });
+    _engine.startListening();
   }
 
   @override
   void dispose() {
-    Logger.instance.logEndListening();
-    _subscription?.cancel();
+    _engine.stopListening();
     super.dispose();
   }
-
 
 
   @override
