@@ -1,7 +1,9 @@
 import 'package:can_visualizer/views/inicio.dart';
 import 'package:flutter/material.dart';
+import 'logger/logger.dart';
 
 void main() {
+  Logger.init();
   runApp(const EolianApp());
 }
 

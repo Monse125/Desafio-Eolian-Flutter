@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Logger extends StatelessWidget {
-  const Logger({super.key});
+class LoggerWidget extends StatelessWidget {
+  const LoggerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
