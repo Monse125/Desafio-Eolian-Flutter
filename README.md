@@ -61,7 +61,9 @@ Estos cambios se hicieron para mantener un flujo más controlado, de manera que 
 
 
 #### 2. Descubrimientos y Aprendizajes Clave:
-Se descubrió la función para generar números de forma random en Dart. También se aprendió la diferencia entre un stream de tipo broadcast y uno que al desuscribirse también deja de enviar señales hasta que se le instancie de nuevo. Específicamente, los streams creados con funciones `async*` (como el que se usó) se detienen automáticamente cuando el último listener se desuscribe, evitando el consumo innecesario de recursos. Por el contrario, los streams broadcast pueden mantener múltiples listeners y requieren un manejo manual de su ciclo de vida. 
+Se descubrió la función para generar números de forma random en Dart. También se aprendió la diferencia entre un stream de tipo broadcast y uno que al desuscribirse también deja de enviar señales hasta que se le instancie de nuevo. Específicamente, los streams creados con funciones `async*` (como el que se usó) se detienen automáticamente cuando el último listener se desuscribe, evitando el consumo innecesario de recursos. Por el contrario, los streams broadcast pueden mantener múltiples listeners y requieren un manejo manual de su ciclo de vida.
+
+Por último, descubrí (por recomendación) la página "Mermaid Chart", muy útil para crear diagramas UML mediante código. Con ayuda de un inteligencia artificial, pude generar un diagrama mucho más limpio del que habría hecho manualmente.
 
 #### 3. Bloqueos o Dificultades Encontradas:
 El mayor bloqueo fue la falta de tiempo para avanzar con mayor velocidad. Hubieron dudas pero fueron todas resueltas, así que se pudo cumplir con lo esperado esta semana. Se gastó algo de tiempo teniendo que cambiar las interacciones entre el logger y la UI, pero no por problemas técnicos o funcionales, más que nada para que la arquitectura quedara más limpia.
