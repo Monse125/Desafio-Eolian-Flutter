@@ -39,3 +39,32 @@ Implementar la funcionalidad central del sistema, es decir:
 - Simulación de la red CAN y lógica de decodificación
 - Conectar el ChangeNotifier para mostrar datos actualizados en la UI en tiempo real.
 Formalizar formato de la Arquitectura.
+
+### Semana 2:
+**Fecha**: 09/07/2025
+
+#### 1. Actividades Realizadas:
+
+
+##### Arquitectura: 
+```
+[ CANReader ]
+     |
+     v
+[ DataEngine ]  <--- Suscribe al Stream
+     |    \
+     v     v
+   UI     Logger
+
+``
+
+
+
+#### 2. Descubrimientos y Aprendizajes Clave:
+
+
+#### 3. Bloqueos o Dificultades Encontradas:
+
+
+#### 4. Plan para la Próxima Semana:
+
